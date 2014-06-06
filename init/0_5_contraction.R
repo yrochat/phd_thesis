@@ -20,7 +20,7 @@ noms.complot <- c("Louise d'Épinay", "Grimm", "Diderot", "Baron d'Holbach", "d'
 ### Création du graphe FINAL ajusté ###
 #######################################
 
-### ATTENTION cette méthode fait la contraction avant la projection du graphe, ce qui fait qu'il y a tout d'un coup quelques personnes connectées au noeud contracté qui n'auraient pas dû l'être…
+### ATTENTION cette méthode fait la contraction avant la projection du graphe, ce qui fait qu'il y a tout d'un coup quelques personnes connectées au noeud contracté qui ne le sont pas sinon.
 
 hey <- sapply(noms.complot, function(x) grep(x, confessions$full))
 # contrôle :
@@ -60,7 +60,7 @@ V(gx.bip)[1:length(unique(input$page))]$types <- TRUE						# On donne l'étiquet
 # personnages sont liés s'ils étaient connectés dans le graphe biparti
 # à la même page des Confessions
 
-gx <- bipartite.projection(gx.bip, type=V(gx.bip)$types, multiplicity = TRUE)$proj2 
+gx <- bipartite.projection(gx.bip, type=V(gx.bip)$types, multiplicity = TRUE)$proj1 
 gx <- subgraph.edges(gx, E(gx)[weight>2])
 gx <- delete.vertices(gx, v = V(gx)[clusters(gx)$membership != 1])
 
@@ -73,7 +73,8 @@ V(gx)$id <- 1:vcount(gx)
 temp.layout <- g1$layout[V(g1)$name %in% V(gx)$name,]
 
 # où sont les complotistes : grep("Schemers", V(gx)$name)
-gx$layout <- rbind(temp.layout[1:(grep("Schemers", V(gx)$name)-1),], c(1,0), temp.layout[grep("Schemers", V(gx)$name):nrow(temp.layout),])
+gx$layout <- 
+rbind(temp.layout[1:(grep("Schemers", V(gx)$name)-1),], c(1,0), temp.layout[grep("Schemers", V(gx)$name):nrow(temp.layout),])
 
 # tkplot(gx)
 # tkplot(g)

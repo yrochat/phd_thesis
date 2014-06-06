@@ -16,52 +16,63 @@ library(scales)
 library(RColorBrewer)
 library(gridExtra)
 
+# to modify the vertex frame width : use "fcircle" as shape
+source("init/vertex_frame_width.R")
+
+# Here is what we obtain after executing "main0.R"
+
+# confessions		# the index of characters, pages and chapters
+# livres			# to which chapter a page corresponds
+
 # g 				# final graph : giant component of g3
 
-# g1  	 			# bipartite graph with co-occurrences +/- 1
-# g1.id	 			# projected on nodes 
-# g1.id.list		# list of projections with varying thresholds
-# sub.g1.id.list	# corresponding giant components
+# g1.bip 			# bipartite graph with co-occurrences +/- 1
+# g1	 			# projected on nodes 
+# g1.list			# list of projections with varying thresholds
+# sub.g1.list	# corresponding giant components
 
-# g0				# bipartite graph with page co-occurrences
-# g0.id				# projected on nodes
-# g0.id.list		# list of projections with varying thresholds
-# sub.g0.id.list	# corresponding giant components
+# g0.bip			# bipartite graph with page co-occurrences
+# g0				# projected on nodes
+# g0.list			# list of projections with varying thresholds
+# sub.g0.list	# corresponding giant components
 
+# g1, g2, g3, g4, ... g[n] # graphs with threshold equal to [n]
+# gchap				# graphs for chapters
+# gx				# contracted graph around the plot
 
 ############################################
 ### GENERATION OF NAIVE AND FINAL GRAPHS ###
 ############################################
 
-# source("scripts0/0_1_graph_generation.R")
+# source("init/0_1_graph_generation.R")
 load("data/data0a.Rdata")
 
 ###############################
 ### GENERATION OF SUBGRAPHS ###
 ###############################
 
-# source("scripts0/0_2_subgraph_generation.R")
+# source("init/0_2_subgraph_generation.R")
 load("data/data0b.Rdata")
 
 ############################################
 ### GENERATION OF SUBGRAPHS PER CHAPTERS ###
 ############################################
 
-# source("scripts0/0_3_subgraph_chapters.R")
+# source("init/0_3_subgraph_chapters.R")
 load("data/data0c.Rdata")
 
 ##############################################
 ### GENERATION OF LAYOUT FOR THE SUBGRAPHS ###
 ##############################################
 
-# source("scripts0/0_4_layout_generation.R")
+# source("init/0_4_layout_generation.R")
 load("data/data0z.Rdata")
 
 ################################################
 ### GENERATION OF THE PLOT CONTRACTION GRAPH ###
 ################################################
 
-# source("scripts0/0_5_contraction.R")
+# source("init/0_5_contraction.R")
 load("data/data0y.Rdata")
 
 

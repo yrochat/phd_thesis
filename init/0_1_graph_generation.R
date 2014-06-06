@@ -2,7 +2,7 @@
 
 # Importing and reading table
 # of IDs and APPEARING PAGES
-res.df <- read.table(	"data0/apparitions_par_pages.txt", 
+res.df <- read.table(	"init/apparitions_par_pages.txt", 
 						sep="\t", 
 						stringsAsFactors = FALSE,
 						col.names = c("id", "volume", "page", "externe"))
@@ -15,7 +15,7 @@ head(res.df)
 # from the first to the last page.
 
 # Cette fois on lit les noms des personnes citées
-res <- readLines("data0/names.txt")
+res <- readLines("init/names.txt")
 
 res <- strsplit(res, split = "\t")
 res.df2 <- do.call(rbind, res)
@@ -105,7 +105,7 @@ V(g0.bip)$types <- FALSE
 V(g0.bip)[1:length(unique(confessions$page))]$types <- TRUE
 
 # Ici le graphe projeté
-g0 <- bipartite.projection(g0.bip, type=V(g0.bip)$types, multiplicity = TRUE)$proj2 
+g0 <- bipartite.projection(g0.bip, type=V(g0.bip)$types, multiplicity = TRUE)$proj1
 
 
 ################################
@@ -142,7 +142,7 @@ V(g1.bip)[1:length(unique(input$page))]$types <- TRUE						# On donne l'étiquet
 # personnages sont liés s'ils étaient connectés dans le graphe biparti
 # à la même page des Confessions
 
-g1 <- bipartite.projection(g1.bip, type=V(g1.bip)$types, multiplicity = TRUE)$proj2 
+g1 <- bipartite.projection(g1.bip, type=V(g1.bip)$types, multiplicity = TRUE)$proj1 
 
 rm(confessions1, confessions2, input, relations, res, res.df, res.df2)
 
