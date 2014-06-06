@@ -1,4 +1,11 @@
+# please see https://github.com/yrochat/phd_thesis/blob/master/README.md before first use
+
+# this command will delete everything in your working space
+
 rm(list=ls())
+
+# choose any working directory
+# everything is stocked inside : data and scripts
 
 setwd("~/Dropbox/DHLab/PhD_thesis/")
 
@@ -21,23 +28,19 @@ library(gridExtra)
 # g0.id.list		# list of projections with varying thresholds
 # sub.g0.id.list	# corresponding giant components
 
-# to modify the vertex frame width : use "fcircle" as shape
-source("scripts/9_vertex_frame_width.R")
 
-####################################################
-### GENERATION DU GRAPHE NAIF ET DU GRAPHE FINAL ###
-####################################################
+############################################
+### GENERATION OF NAIVE AND FINAL GRAPHS ###
+############################################
 
 # source("scripts0/0_1_graph_generation.R")
-
 load("data/data0a.Rdata")
 
-###################################
-### GENERATION DES SOUS-GRAPHES ###
-###################################
+###############################
+### GENERATION OF SUBGRAPHS ###
+###############################
 
 # source("scripts0/0_2_subgraph_generation.R")
-
 load("data/data0b.Rdata")
 
 #################################################

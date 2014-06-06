@@ -2,7 +2,7 @@
 
 # Importing and reading table
 # of IDs and APPEARING PAGES
-res.df <- read.table(	"data/apparitions_par_pages.txt", 
+res.df <- read.table(	"data0/apparitions_par_pages.txt", 
 						sep="\t", 
 						stringsAsFactors = FALSE,
 						col.names = c("id", "volume", "page", "externe"))
@@ -15,7 +15,7 @@ head(res.df)
 # from the first to the last page.
 
 # Cette fois on lit les noms des personnes citées
-res <- readLines("data/names.txt")
+res <- readLines("data0/names.txt")
 
 res <- strsplit(res, split = "\t")
 res.df2 <- do.call(rbind, res)
