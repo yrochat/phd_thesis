@@ -43,30 +43,29 @@ load("data/data0a.Rdata")
 # source("scripts0/0_2_subgraph_generation.R")
 load("data/data0b.Rdata")
 
-#################################################
-### GENERATION DES SOUS-GRAPHES DES CHAPITRES ###
-#################################################
+############################################
+### GENERATION OF SUBGRAPHS PER CHAPTERS ###
+############################################
 
 # source("scripts0/0_3_subgraph_chapters.R")
-
 load("data/data0c.Rdata")
 
-###############################################
-### GENERATION DES LAYOUTS DES SOUS-GRAPHES ###
-###############################################
+##############################################
+### GENERATION OF LAYOUT FOR THE SUBGRAPHS ###
+##############################################
 
 # source("scripts0/0_4_layout_generation.R")
-
 load("data/data0z.Rdata")
 
-#################################################
-### GENERATION DU GRAPHE CONTRACTE DU COMPLOT ###
-#################################################
+################################################
+### GENERATION OF THE PLOT CONTRACTION GRAPH ###
+################################################
 
 # source("scripts0/0_5_contraction.R")
-
 load("data/data0y.Rdata")
 
 
 
-# and then comes "main.R"
+
+# this is for the initialisation/loading
+# then for the visulisation/analysis comes "main.R"
