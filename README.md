@@ -1,7 +1,7 @@
 phd_thesis
 ==========
 
-Data and scripts used for my Ph.D. thesis on character network analysis. As of today (2014/06/06), the thesis hasn't been defended yet (this will probably happen end of summer).
+Data and scripts used for my Ph.D. thesis on character network analysis. As of today (2014/09/19), the thesis has been defended. Public defence will happen on 2014/12/12 at University of Lausanne.
 
 
 First use
