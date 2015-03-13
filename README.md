@@ -10,11 +10,13 @@ First use
 ---------
 
 The first time you use the script, you have the choice either to use the [pre-compiled data](https://github.com/yrochat/phd_thesis/tree/master/data), or to compile them by yourselves. 
-In the first case [main0.R](https://github.com/yrochat/phd_thesis/blob/master/main0.R) as it is. 
-In the second case, open it – [main0.R](https://github.com/yrochat/phd_thesis/blob/master/main0.R) – and un-comment all the five "source" entries. 
-This will load the initial data (the index) and read, sort and turn them into a bipartite graph, then project, sort clusters, etc. You won't need to do that again, and can keep the original file in the state it is now.
 
-In our case here, the data files are [names.txt](https://github.com/yrochat/phd_thesis/blob/master/init/names.txt), that is a list of all characters along with a unique ID, and [apparitions_par_pages.txt](https://github.com/yrochat/phd_thesis/blob/master/init/apparitions_par_pages.txt). In the latter, each line is an occurrence. Columns are: 
+In the first case, use [main0.R](https://github.com/yrochat/phd_thesis/blob/master/main0.R) as it is. 
+
+In the second case, open it – [main0.R](https://github.com/yrochat/phd_thesis/blob/master/main0.R) – and un-comment all the five "source" entries. 
+This will load the initial data (the index, see below) and read, sort and turn them into a bipartite graph, then project the whole to a unipartite graph, sort clusters, etc. You won't need to do that again, and can keep the original file in the state it is now.
+
+In our case here, the data files are [names.txt](https://github.com/yrochat/phd_thesis/blob/master/init/names.txt), which is a list of all characters along with a unique ID, and [apparitions_par_pages.txt](https://github.com/yrochat/phd_thesis/blob/master/init/apparitions_par_pages.txt). In the latter, each line is an occurrence. Columns are: 
 
 1. The character unique ID
 2. The volume 
