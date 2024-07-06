@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/20557373.svg)](https://zenodo.org/doi/10.5281/zenodo.12674064)
+
 phd_thesis
 ==========
 
